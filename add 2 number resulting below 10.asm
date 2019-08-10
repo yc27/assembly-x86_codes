@@ -7,16 +7,15 @@
     B DB ?
 
 .CODE
-    MAIN PROC
-        
+    MAIN PROC        
         MOV AX, @DATA
         MOV DS, AX
                      
         MOV AH, 9
-        LEA DX, MSG     ;PRINT MSG
+        LEA DX, MSG         ;PRINT MSG
         INT 21H        
         
-		;PRINT NEW LINE
+        ;PRINT NEW LINE
         MOV AH,2
         MOV DL, 0AH
         INT 21H
@@ -30,17 +29,17 @@
         SUB A, 48
              
         ;TAKE INPUT
-		MOV AH, 1       
+        MOV AH, 1       
         INT 21H
         MOV B, AL 
         SUB B, 48 
                 
         ;Add A & B
-		MOV CH, A
-		ADD CH, B
-		ADD CH, 48 
+        MOV CH, A
+        ADD CH, B
+        ADD CH, 48 
         
-		;PRINT NEW LINE
+        ;PRINT NEW LINE
         MOV AH,2
         MOV DL, 0AH
         INT 21H   

@@ -6,8 +6,7 @@
     B DB ?
 
 .CODE
-    MAIN PROC
-        
+    MAIN PROC        
         MOV AX, @DATA
         MOV DS, AX
         
@@ -20,22 +19,21 @@
         SUB A, 48
              
         ;take Input
-		MOV AH, 1       
+        MOV AH, 1
         INT 21H
         MOV B, AL 
         SUB B, 48 
                 
-		MOV AL, A
-		ADD AL, B
+        MOV AL, A
+        ADD AL, B
         MOV AH, 0
-	    
-        AAA		;AAA = adjust after addition 
-	    
+        
+        AAA             ;AAA = adjust after addition 
+        
         ADD AL, 48
-		ADD AH, 48
-		MOV BX, AX
+        ADD AH, 48
+        MOV BX, AX
 
-	    
         ;print new line
         MOV AH,2
         MOV DL, 0AH
